@@ -1,0 +1,17 @@
+{
+  "name": "my-chat-interface",
+  "version": "1.0.0",
+  "description": "A chat interface web application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustCris23/telegram-proxy-server.git"
+  },
+  "author": "JustCris23",
+  "license": "ISC"
+}
