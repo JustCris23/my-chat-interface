@@ -1,4 +1,5 @@
 const express = require('express');
+const fetch = require('node-fetch');
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -22,4 +23,3 @@ app.post('/send-message', async (req, res) => {
 app.listen(port, () => {
   console.log(`Telegram proxy server listening at http://localhost:${port}`);
 });
-
