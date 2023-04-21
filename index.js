@@ -1,5 +1,6 @@
 const express = require('express');
 const fetch = require('node-fetch');
+const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -18,6 +19,11 @@ app.post('/send-message', async (req, res) => {
     console.error('Error sending message to Telegram bot:', error);
     res.status(500).json({ error: 'An error occurred while sending the message' });
   }
+});
+
+// Add this new route to serve the chat_interface.html file
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'chat_interface.html'));
 });
 
 app.listen(port, () => {
