@@ -30,18 +30,12 @@ app.post('/send-message', async (req, res) => {
 
 app.post('/webhook', (req, res) => {
   const data = req.body;
+  console.log('Received webhook data:', data);
 
   if (data.message && data.message.chat && data.message.chat.id) {
     currentChatId = data.message.chat.id;
+    console.log('Updated chat ID to:', currentChatId);
   }
 
   res.sendStatus(200);
-});
-
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'chat_interface.html'));
-});
-
-app.listen(port, () => {
-  console.log(`Telegram proxy server listening at http://localhost:${port}`);
 });
